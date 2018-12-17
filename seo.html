@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="description" content="ES6-fake-drum-kit-master where you can control advancing or backdown with numbers with your keyboard" />
+	<meta name="keywords" content="seo services company https://ezerbelhassen.github.io/ES6-fake-drum-kit-master/ find drum-kit-master which is wa website where you can control to advance or backdown with numbers with your keyboard.Also by clicking on the keyboard you can here some music and u will see a different color with every click.Don't forget to visit the home page https://ezerbelhassen.github.io/ES6-fake-drum-kit-master/ .Anyway have fun and check it out "  >
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<style>
+		#score{ font-size: 200px; 
+}
+	</style>
+
+</head>
+
+<body onkeypress="play()">
+	
+	<center>
+		<div class="container-fluid" style="padding-top: 80px;">
+		<audio id="song" src="song.mp3"></audio>
+		<h1>Press any Key to Start</h1>
+		<h1 id="score"> 0 </h1>
+		<button type="button" class="btn btn-dark" id="9adim" onclick="avance()">9adem</button>
+		<button type="button" class="btn btn-dark" onclick="reset()">Reset</button>
+		<button type="button" class="btn btn-dark" id="wakhir" onclick="wakher()">9adem betweli</button>
+		</div>
+	</center>
+
+</body>
+
+<script>
+	let song = document.getElementById("song");
+	let score = document.getElementById("score");
+	let colors = ["#730122","#02173E","#13A399","#F16541","#044D29","#F5941C"];
+	const avance= () =>{
+		song.currentTime+= 10;
+	}
+	const wakher= () =>{
+		song.currentTime-= 10;
+	}
+	const reset= () =>{
+		score.innerHTML=0;
+		song.currentTime = 0;
+	}		
+	const play = () => {
+		document.body.style.backgroundColor = colors[(score.innerHTML % colors.length)];
+		score.innerHTML++;
+		song.play(); 	
+	}
+	const pause = () => {
+		song.pause();
+	}
+	setInterval(pause,1000);
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+</html>
